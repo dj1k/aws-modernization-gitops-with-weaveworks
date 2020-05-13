@@ -67,7 +67,13 @@ Let's grab these example templates and check them in to git!
 
 ```bash
 mkdir opa/contraints
-curl -o xxxx opa/constraints
-curl -o xxxx opa/constraints
+curl -o https://github.com/aws-samples/aws-modernization-gitops-with-weaveworks/tree/master/content/30_workshop_03_grc/content/30_workshop_03_grc/130_create_policy_contraints/deploy.files/alowed-repos.yaml opa/constraints/alowed-repos.yaml
+curl -o https://github.com/aws-samples/aws-modernization-gitops-with-weaveworks/tree/master/content/30_workshop_03_grc/content/30_workshop_03_grc/130_create_policy_contraints/deploy.files/require-labels.yaml opa/constraints/require-labels.yaml
+
+git add "opa/contraints/"
+git commit -m "adding test constraints"
+git push
 ```
+
+
 

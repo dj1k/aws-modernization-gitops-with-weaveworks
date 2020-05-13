@@ -42,7 +42,7 @@ Let's add this to our git repo
 ```bash
 mkdir example-apps
 
-curl -o xxx example-apps/pod-unauthorized-repo.yaml
+curl -o https://github.com/aws-samples/aws-modernization-gitops-with-weaveworks/tree/master/content/30_workshop_03_grc/140_test-policy-contraints/deploy.files/pod-unauthorized-repo.yaml example-apps/pod-unauthorized-repo.yaml
 
 git add example-apps/pod-unauthorized-repo.yaml
 
@@ -75,7 +75,7 @@ kubectl logs <flux-pod> -n fluxcd
 If you run the following command you will get the same error:
 
 ```bash
-kubectl create -f example-apps/pod-unauthorized-repo.yaml
+kubectl create -f ./example-apps/pod-unauthorized-repo.yaml
 ```
 
 ### Lets test namespaces
@@ -84,7 +84,7 @@ Download this manifest and try to create this namespace:
 
 ```bash
 mkdir namespaces
-curl -o xxxx namespaces/bad-namespace.yaml
+curl -o https://github.com/aws-samples/aws-modernization-gitops-with-weaveworks/tree/master/content/30_workshop_03_grc/140_test-policy-contraints/deploy.files/bad-namespace.yaml namespaces/bad-namespace.yaml
 ```
 
 It should look like this:
@@ -99,7 +99,7 @@ metadata:
 Lets run this manually for now so we can see it fail:
 
 ```bash
-kubectl create -f namespaces/bad-namespace.yaml
+kubectl create -f ./namespaces/bad-namespace.yaml
 ```
 
 {{< output >}}
@@ -116,6 +116,18 @@ metadata:
   labels:
     owner: testuser.agilebank.demo
 ```
+
+Now let's check this in to git:
+
+```bash
+git add "namespaces/bad-namespace.yaml"
+
+git commit -m "fixing bad namespace with label"
+
+git push
+```
+
+You see that this has nwo been created.
 
 {{< output >}}
 namespace/test-namespace created

@@ -22,8 +22,8 @@ This manifest will deplpy the following in to the cluster:
 
 ```bash
 mkdir opa
-curl -o https://raw.githubusercontent.com/open-policy-agent/gatekeeper/master/deploy/gatekeeper.yaml opa/opa-gatekeper.yaml
 
+curl -o https://github.com/aws-samples/aws-modernization-gitops-with-weaveworks/tree/master/content/30_workshop_03_grc/content/30_workshop_03_grc/120_deploy_opa_gatekeeper/deploy.files/opa-gatekeper.yaml
 git add opa/opa-gatekeeper.yaml
 git commit -m "adding opa gatekeeper"
 git push
