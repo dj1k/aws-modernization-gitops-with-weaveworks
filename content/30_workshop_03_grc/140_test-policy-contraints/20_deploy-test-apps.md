@@ -89,7 +89,7 @@ curl -o https://github.com/aws-samples/aws-modernization-gitops-with-weaveworks/
 
 It should look like this:
 
-```
+```yaml
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -108,7 +108,7 @@ Error from server ([denied by all-must-have-owner] All namespaces must have an `
 
 Let's make sure our policy allows namespaces to be created when the rules are met. Edit the manifest with the following:
 
-```
+```yaml
 apiVersion: v1
 kind: Namespace
 metadata:

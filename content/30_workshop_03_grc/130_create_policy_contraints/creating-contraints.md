@@ -11,7 +11,7 @@ Going back to our templates, we defined a crd called `K8sRequiredLabels` with a 
 
 Here's an example of what we could do with this:
 
-```
+```yaml
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredLabels
 metadata:
@@ -39,7 +39,7 @@ In this case, we've added a sepcific message for this contraint as well as the l
 
 lets take a look at anoother example :
 
-```
+```yaml
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sAllowedRepos
 metadata:

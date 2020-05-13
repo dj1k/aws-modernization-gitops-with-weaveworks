@@ -7,7 +7,7 @@ weight: 20
 
 We are going to create 2 templates:
 
-- a **allowed-repos** this will determine what image repos can ben used in production
+- **allowed-repos** this will determine what image repos can ben used in production
 - **require-labels** - this policy requires that namespaces must have labels that match a regex value
 
 # Let's download some samples for the above
@@ -36,7 +36,7 @@ We can see this is a **ConstraintTemplate** object. If you remember this crd was
 
 Okay, the metadata has the name of the template which is standard stuff, let's look at the next part, we can see inside the **spec** that this template is going to create another crd!!
 
-```
+```yaml
 spec:
   crd:
     spec:
@@ -80,7 +80,7 @@ This contains the `rego` policy you should use to define what rules are applied.
 
 Let's take a look:
 
-```
+```yaml
   targets:
     - target: admission.k8s.gatekeeper.sh
       rego: |
@@ -133,7 +133,7 @@ The format for this look svery similar, we have `metadata` and `name`, then insi
 
 The accepted parameters are an array of `repos` which include item values.
 
-```
+```yaml
 apiVersion: templates.gatekeeper.sh/v1beta1
 kind: ConstraintTemplate
 metadata:
@@ -155,7 +155,8 @@ spec:
 
 Next let's look at the targets:
 
-```  targets:
+```yaml  
+targets:
     - target: admission.k8s.gatekeeper.sh
       rego: |
         package k8sallowedrepos
