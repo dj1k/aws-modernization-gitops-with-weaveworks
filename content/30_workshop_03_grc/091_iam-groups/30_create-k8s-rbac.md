@@ -5,7 +5,7 @@ draft: false
 weight: 30
 ---
 
-You can refere to [intro to RBAC](/beginner/090_rbac/) module to understand the basic of Kubernetes RBAC.
+You can refere to [intro to RBAC](https://eksworkshop.com/beginner/090_rbac/) module to understand the basic of Kubernetes RBAC.
 
 #### Create kubernetes namespaces
 
