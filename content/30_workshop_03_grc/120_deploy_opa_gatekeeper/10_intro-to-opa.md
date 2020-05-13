@@ -24,7 +24,7 @@ This is great as it gives us a unified way to enforce policy as code across all 
 
 ### Admission Controllers
 
-Kubernetes uses built `Admission Controllers` to intercept requests sent to the api server to validate or even mutate the request before they persist in etcd.
+Kubernetes uses built in `Admission Controllers` to intercept requests sent to the api server to validate or even mutate the request before they persist in etcd.
 
 Some examples of this are:
 
@@ -49,9 +49,9 @@ When we deploy OPA Gatekeeper, we create a `ValidatingWebhookConfiguration` whic
 
 We will dicsuss later on how we define these rules.
 
-###£ Overview of OPA Gatekeeper Architecture
+#### Overview of OPA Gatekeeper Architecture
 
-![OPA gatekeeper](/images/grc/opa-gatekeeper.png)
+![OPA gatekeeper](../../static/images/opa-gatekeeper.png)
 
 
-Reference [OPA Gatekeeper](https://kubernetes.io/blog/2019/08/06/opa-gatekeeper-policy-and-governance-for-kubernetes/)
+Reference docs [OPA Gatekeeper](https://kubernetes.io/blog/2019/08/06/opa-gatekeeper-policy-and-governance-for-kubernetes/)
