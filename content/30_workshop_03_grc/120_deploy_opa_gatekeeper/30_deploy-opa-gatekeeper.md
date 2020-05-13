@@ -2,7 +2,7 @@
 title: "Deploy OPA gatekeeper"
 date: 2020-04-12T18:00:00-00:00
 draft: false
-weight: 20
+weight: 30
 ---
 
 Let's deploy opa gatekeeper using a prebuilt image.
@@ -13,11 +13,11 @@ This manifest will deplpy the following in to the cluster:
 - **gatekeeper-admin** service account
 - **config** custom resource defintion
 - **ConstraintTemplate** custome resource
-- **gatekeeper-webhook-service**
+- **gatekeeper-webhook-service** - clusterip service
 - **gatekeeper-controller-manager** deployment
-- **secret** - self signed certificate `think about using someting else, such as cert-manager + pki>
-- required roles`
-- ValidatingWebhookConfiguration - this basically creates a validating webhook whenever a resource is created or udpated in the cluster
+- **secret** - self signed certificate `think about using someting else, such as cert-manager + pki`
+- **required roles**
+- **ValidatingWebhookConfiguration** - this basically creates a validating webhook whenever a resource is created or udpated in the cluster
 
 
 ```bash

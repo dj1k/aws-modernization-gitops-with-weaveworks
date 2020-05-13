@@ -53,5 +53,10 @@ We will dicsuss later on how we define these rules.
 
 ![OPA gatekeeper](../../../static/images/opa-gatekeeper.png)
 
+- **Configure Replication** - this is for auditing what has already been deployed to check for pre-existing violations
+- **Authz Webhook** - this is used by the api server to query opa for authz decisions
+- **AdmissionController** - this is the `ValidatingAdmissionWebhook`, we set up a webhook config to leverage this controller
+- **Policy/Template crd's** - the opa gatekeeper-controller will watch for these objects which wil define what actions the api server will take (see above)
+
 
 Reference docs [OPA Gatekeeper](https://kubernetes.io/blog/2019/08/06/opa-gatekeeper-policy-and-governance-for-kubernetes/)

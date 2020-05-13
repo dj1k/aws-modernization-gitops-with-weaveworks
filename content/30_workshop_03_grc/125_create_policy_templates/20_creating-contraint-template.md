@@ -25,7 +25,7 @@ curl xxxx -o opa/templates/require-labels.yaml
 
 ```
 
-# Explore the require-label template
+# Explore the require-labels template
 
 Lets understand what's happening and what each part of this template is doing.
 
