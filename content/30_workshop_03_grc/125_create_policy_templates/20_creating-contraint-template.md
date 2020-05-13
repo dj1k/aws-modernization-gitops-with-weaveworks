@@ -19,9 +19,9 @@ Run the following commands to download some policy template examples to your loc
 
 mkdir opa/templates
 
-curl https://github.com/aws-samples/aws-modernization-gitops-with-weaveworks/tree/master/content/30_workshop_03_grc/125_create_policy_templates/deploy.files/allowed-repos.yaml -o opa/templates/allowed-repos.yaml
+curl -o https://weaveworks-gitops.awsworkshop.io/30_workshop_03_grc/125_create_policy_templates/deploy.files/allowed-repos.yaml > opa/templates/allowed-repos.yaml
 
-curl https://github.com/aws-samples/aws-modernization-gitops-with-weaveworks/tree/master/content/30_workshop_03_grc/125_create_policy_templates/deploy.files/require-labels.yaml -o opa/templates/require-labels.yaml
+curl https://weaveworks-gitops.awsworkshop.io/30_workshop_03_grc/125_create_policy_templates/deploy.files/require-labels.yaml > opa/templates/require-labels.yaml
 
 ```
 
