@@ -7,7 +7,7 @@ draft: false
 
 To cleanup, follow the below steps.
 
-To remove sample application from git and delet the namespace
+To remove sample application from git and delete the namespace
 
 ```bash
 rm -rf ./alpha/
@@ -20,5 +20,5 @@ kubectl delete ns alpha
 To remove IAM role and Service Account stack from cloudformation
 
 ```bash
-eksctl delete iamserviceaccount --name iam-test --namespace default --cluster eksworkshop-eksctl
+eksctl delete iamserviceaccount --name iam-test --namespace alpha --cluster eksworkshop-eksctl
 ```

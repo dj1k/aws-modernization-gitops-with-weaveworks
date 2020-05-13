@@ -209,9 +209,16 @@ kube-system   kube-proxy-pr7k7           1/1     Running   0          100m
 
 It is possible to merge several kubernetes API access in the same KUBECONFIG file, or just tell Kubectl several file to lookup at once:
 
-```
+```bash
 export KUBECONFIG=/tmp/kubeconfig-dev:/tmp/kubeconfig-integ:/tmp/kubeconfig-admin
+
+# then run the following to get a list of contexts
+kubectl config get-contexts
+kubectl config current-context
+kubectl config use-context my-cluster-name
 ```
+
+
 
 ## Conclusion
 
