@@ -58,5 +58,77 @@ Check what happened to the pod, run the following:
 kubectl get pods opa -n production
 
 ```
+You should see it does not get deployed.
+
+If we explore flux logs we should be able to see what happened and get the following error:
+
+{{< output >}}
+Error from server ([denied by prod-repo-is-openpolicyagent] container <opa> has an invalid image repo <openpolicyagent/opa:0.9.2>, allowed repos are ["only-this-repo"]): error when creating "pod-unauthorized-repo.yaml": admission webhook "validation.gatekeeper.sh" denied the request: [denied by prod-repo-is-openpolicyagent] container <opa> has an invalid image repo <openpolicyagent/opa:0.9.2>, allowed repos are ["only-this-repo"]
+{{< /output >}}
+
+To get the logs run:
+
+```bash
+kubectl logs <flux-pod> -n fluxcd
+```
+
+If you run the following command you will get the same error:
+
+```bash
+kubectl create -f example-apps/pod-unauthorized-repo.yaml
+```
+
+### Lets test namespaces
+
+Download this manifest and try to create this namespace:
+
+```bash
+mkdir namespaces
+curl -o xxxx namespaces/bad-namespace.yaml
+```
+
+It should look like this:
+
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-namespace
+```
+
+Lets run this manually for now so we can see it fail:
+
+```bash
+kubectl create -f namespaces/bad-namespace.yaml
+```
+
+{{< output >}}
+Error from server ([denied by all-must-have-owner] All namespaces must have an `owner` label that points to your company username): error when creating "bad-namespace.yaml": admission webhook "validation.gatekeeper.sh" denied the request: [denied by all-must-have-owner] All namespaces must have an `owner` label that points to your company username
+{{< /output >}}
+
+Let's make sure our policy allows namespaces to be created when the rules are met. Edit the manifest with the following:
+
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-namespace
+  labels:
+    owner: testuser.agilebank.demo
+```
+
+{{< output >}}
+namespace/test-namespace created
+{{< /output >}}
+
+
+## Summary
+
+
+We've proven now that the policies we've defined through OPA Gatekeeper Contraint templates have worked.
+
+- We created contraint templates which then created our contraint crds `K8sAllowedRepos` and `K8sRequiredLabels`.
+
+- This allowed us to declaritively created `K8sAllowedRepos` and `K8sRequiredLabels` objects and parameterise them. We can create more adn add different values and point to different namespaces or even different resources such as `services`, `secrets` etc
 
 
