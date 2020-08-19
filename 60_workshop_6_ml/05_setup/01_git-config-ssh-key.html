@@ -12,21 +12,21 @@
     <title>Cloud9 setup :: Weaveworks Introduction to GitOps w/ AWS EKS</title>
 
     
-    <link href="../../css/nucleus.css?1597766732" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1597766732" rel="stylesheet">
-    <link href="../../css/hybrid.css?1597766732" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1597766732" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1597766732" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1597766732" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1597766732" rel="stylesheet">
-    <link href="../../css/theme.css?1597766732" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1597766732" rel="stylesheet">
+    <link href="../../css/nucleus.css?1597861318" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1597861318" rel="stylesheet">
+    <link href="../../css/hybrid.css?1597861318" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1597861318" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1597861318" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1597861318" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1597861318" rel="stylesheet">
+    <link href="../../css/theme.css?1597861318" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1597861318" rel="stylesheet">
     
-    <link href="../../css/theme-mine.css?1597766732" rel="stylesheet">
+    <link href="../../css/theme-mine.css?1597861318" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1597766732"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1597861318"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1597766732"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1597766732"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1597861318"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1597861318"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1597766732"></script>
+<script type="text/javascript" src="../../js/search.js?1597861318"></script>
 
     
   </div>
@@ -4539,7 +4539,7 @@ if (!doNotTrack) {
 <p>The default disk size for a cloud9 instance is 10gb but we need more than this for the tools needed to build ML projects. So we need to increase the size of the EBS volume and grow the Linux filesytem. To do this use the aws console to locate the EC2 instance by clicking on EBS volume used by your cloud9 instance and increase the size of the EBS volume from 10gb to 100gb</p>
 
 <ul>
-<li>Click the <strong>A</strong> button next to the <code>Share</code> button in the upper right hand corner of your Cloud9 workspace</li>
+<li>Go to the AWS console for your event session</li>
 <li>Click <strong>Manage EC2 Instance</strong></li>
 <li>Make sure your <code>aws-cloud9-*</code> instance is selected</li>
 </ul>
@@ -4560,11 +4560,12 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Grow filesystem</span>
 sudo growpart /dev/xvda <span style="color:#ae81ff">1</span>
 sudo resize2fs /dev/xvda1
-df -h
-Filesystem      Size  Used Avail Use% Mounted on
+df -h</code></pre></div>
+<p>You should see output similar to this:</p>
+<pre><code>Filesystem      Size  Used Avail Use% Mounted on
 devtmpfs        483M   60K  483M   1% /dev
-tmpfs           493M     <span style="color:#ae81ff">0</span>  493M   0% /dev/shm
-/dev/xvda1       99G  7.6G   91G   8% /</code></pre></div>
+tmpfs           493M     0  493M   0% /dev/shm
+/dev/xvda1       99G  7.6G   91G   8% /</code></pre>
 
 <footer class="footline">
 	
@@ -7343,19 +7344,19 @@ tmpfs           493M     <span style="color:#ae81ff">0</span>  493M   0% /dev/sh
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1597766732"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1597766732"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1597766732"></script>
-    <script src="../../js/jquery.sticky.js?1597766732"></script>
-    <script src="../../js/featherlight.min.js?1597766732"></script>
-    <script src="../../js/highlight.pack.js?1597766732"></script>
+    <script src="../../js/clipboard.min.js?1597861318"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1597861318"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1597861318"></script>
+    <script src="../../js/jquery.sticky.js?1597861318"></script>
+    <script src="../../js/featherlight.min.js?1597861318"></script>
+    <script src="../../js/highlight.pack.js?1597861318"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1597766732"></script>
-    <script src="../../js/learn.js?1597766732"></script>
-    <script src="../../js/hugo-learn.js?1597766732"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1597861318"></script>
+    <script src="../../js/learn.js?1597861318"></script>
+    <script src="../../js/hugo-learn.js?1597861318"></script>
 
-    <link href="../../mermaid/mermaid.css?1597766732" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1597766732"></script>
+    <link href="../../mermaid/mermaid.css?1597861318" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1597861318"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
