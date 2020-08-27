@@ -81,6 +81,7 @@ Modify the two cluster files `ec2-cluster-1.yaml` and `ec2-cluster-2.yaml` as fo
 
 * `AWSCluster.spec.region` to `us-west-2`
 * `AWSCluster.spec.sshKeyName` to `weaveworks-workshop`
+* `AWSMachineTemplate.spec.iamInstanceProfileName` to `eksworkshop-admin` (There should be 2 machine templates per cluster. One for the control plane instances and one for the worker instances)
 * `AWSMachineTemplate.spec.template.spec.sshKeyName` to `weaveworks-workshop` (There should be 2 machine templates per cluster. One for the control plane instances and one for the worker instances)
 
 Finally, let's push our changes to git
